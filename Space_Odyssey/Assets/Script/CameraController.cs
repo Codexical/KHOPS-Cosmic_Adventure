@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Android; // 需要這個來處理 Android 權限
+using UnityEngine.Android;
 
 public class CameraController : MonoBehaviour
 {
@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour
             backCameraName = devices[0].name;
         }
 
-        cameraTexture = new WebCamTexture(backCameraName, 1920, 1080, 30);
+        cameraTexture = new WebCamTexture(backCameraName, Screen.width, Screen.height);
         cameraTexture.Play();
 
         background.texture = cameraTexture;
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
     {
         yield return new WaitUntil(() => cameraTexture.width > 100);
 
-        Debug.Log($"相機解析度: {cameraTexture.width}x{cameraTexture.height}");
+        Debug.Log($"Camera Resolution: {cameraTexture.width}x{cameraTexture.height}");
 
         float ratio = (float)cameraTexture.width / (float)cameraTexture.height;
         aspectRatioFitter.aspectRatio = ratio;
@@ -79,8 +79,6 @@ public class CameraController : MonoBehaviour
         else
         {
             background.uvRect = new Rect(0, 0, 1, 1);
-
-            // 旋轉修正
             background.transform.localEulerAngles = new Vector3(0, 0, -cameraTexture.videoRotationAngle);
         }
 

@@ -28,8 +28,7 @@ public class GyroscopeController : MonoBehaviour
             rawGyroRotation = Input.gyro.attitude;
             Quaternion convertedRotation = new Quaternion(rawGyroRotation.x, rawGyroRotation.y, -rawGyroRotation.z, -rawGyroRotation.w);
             gyroRotation = rotationFix * convertedRotation;
-            transform.rotation = gyroRotation;
-            Debug.Log(transform.rotation);
+            transform.rotation = Quaternion.Slerp(transform.rotation, gyroRotation, 0.2f);
         }
     }
 }
