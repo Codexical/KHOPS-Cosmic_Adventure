@@ -1126,9 +1126,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1223773144}
+      - m_Target: {fileID: 1842959807}
         m_TargetAssemblyTypeName: ScreenshotManager, Assembly-CSharp
-        m_MethodName: TakeAndSaveScreenshot
+        m_MethodName: TakeScreenshot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee5857c03991604a91bd3d98022f390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenshotButton: {fileID: 0}
 --- !u!1 &1284815535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842959806}
   - component: {fileID: 1842959805}
+  - component: {fileID: 1842959807}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1586,6 +1588,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1842959807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842959804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee5857c03991604a91bd3d98022f390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenshotButton: {fileID: 1223773140}
 --- !u!1 &1886528246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1377197793697218, guid: b4201d402613a4464b35c805dafcca62, type: 3}
