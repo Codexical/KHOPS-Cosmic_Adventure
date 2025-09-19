@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour
             backCameraName = devices[0].name;
         }
 
-        cameraTexture = new WebCamTexture(backCameraName, Screen.width, Screen.height);
+        cameraTexture = new WebCamTexture(backCameraName, 3264, 2032);
         cameraTexture.Play();
 
         background.texture = cameraTexture;
