@@ -15,7 +15,7 @@ public class ScreenshotManager : MonoBehaviour
     private IEnumerator SaveScreenshotCoroutine()
     {
         yield return new WaitForEndOfFrame();
-
+#if UNITY_ANDROID && !UNITY_EDITOR
         Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
 
         string albumName = "Screenshots";
@@ -37,6 +37,7 @@ public class ScreenshotManager : MonoBehaviour
                 }
             });
         Destroy(screenshotTexture);
+#endif
         screenshotButton.SetActive(true);
     }
 }
